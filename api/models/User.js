@@ -28,12 +28,12 @@ module.exports = {
     //minLength: 1 
     //},
 
-    //contact: { type: 'string',
+    //contact: { type: 'number',
     //required:true ,
     //minLength: 10 
     //},
 
-    //email: { type: 'email',
+    //email: { type: 'string',
     //required:true ,
     //unique: true,
     //isEmail: true,
