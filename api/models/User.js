@@ -56,6 +56,23 @@ module.exports = {
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
   },
-
+  validationMessages: {
+    firstname: {
+      required: "Please type your firstname",
+    },
+    lastname: {
+      required: "Please type your lastname",
+    },
+    contact: {
+      required: "Please type your mobile number",
+    },
+    email: {
+      required: "Please type your email",
+    },
+    password: {
+      required: "Enter your password which should be 6 minimum length containing 
+       Atleast a number and an alaphabet!",
+    }
+  },
 };
 
