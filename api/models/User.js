@@ -37,12 +37,11 @@ module.exports = {
     //required:true ,
     //unique: true,
     //isEmail: true,
-    //minLength: 14
     //},
 
     //password: { type: 'string',
     //required:true ,
-    //minLength: 8 
+    //return _.isString(value) && value.length >= 6 && value.match(/[a-z]/i) && value.match(/[0-9]/);
     //},
     //customToJSON: function () {
     //return _.omit(this, ['password'])
