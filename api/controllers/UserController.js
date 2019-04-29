@@ -4,16 +4,31 @@ module.exports = {
 */
 create: function (req, res) {
 let firstName = req.param('firstname'),
-lastName = req.param('lastname');
+lastName = req.param('lastname'),
+conTact = req.param('contact'),
+eMail = req.param('email'),
+passWord = req.param('password');
 if(!firstName){
-return res.badRequest({err:'Invalid first_name'});
+return res.badRequest({err:'Invalid firstname'});
 }
 if(!lastName){
-return res.badRequest({err:'Invlaid last_name'});
+return res.badRequest({err:'Invlaid lastname'});
+}
+if(!conTact){
+return res.badRequest({err:'Invlaid contact'});
+}
+if(!eMail){
+return res.badRequest({err:'Invlaid email'});
+}
+if(!passWord){
+return res.badRequest({err:'Invlaid password'});
 }
 User.create({
 firstname : firstName,
 lastname : lastName,
+contact : conTact,
+email : eMail,
+password : passWord
 })
 .then(_user => {
 if(!_user) return res.serverError({err: 'User created '});
@@ -30,6 +45,9 @@ return res.ok(_user);
 update: function (req, res) {
 let firstName = req.param(`firstname`),
 lastName = req.param(`lastname`),
+conTact = req.param(`contact`),
+eMail = req.param(`email`),
+passWord = req.param(`password`);
 userId = req.params.id;
 if (!userId) return res.badRequest({ err: `user id is missing` });
 let user = {};
@@ -38,6 +56,17 @@ user.firstname = firstName;
 }
 if (lastName) {
 user.lastname = lastName;
+}
+if (conTact) {
+user.contact = conTact;	
+}
+if (eMail) {
+user.email = eMail;	
+}
+// write a function so it checks the user id with its password and verifies 
+// before updating, if its true it updates and it creates error if not
+if (passWord) {
+user.password = passWord;	
 }
 User.update({ id: userId }, user)
 .then(_user => {
