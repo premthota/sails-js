@@ -22,8 +22,7 @@ module.exports = {
     required:true 
     },
 
-
-    
+  
     contact: { type: 'string',
     required:true ,
     isNumber:true,
