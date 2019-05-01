@@ -9,19 +9,16 @@ conTact = req.param('contact'),
 eMail = req.param('email'),
 passWord = req.param('password');
 if(!firstName){
-return res.badRequest({err:'Invalid firstname'});
-}
-if(!lastName){
-return res.badRequest({err:'Invlaid lastname'});
+return res.badRequest({err:'Enter firstname'});
 }
 if(!conTact){
-return res.badRequest({err:'Invlaid contact'});
+return res.badRequest({err:'Enter your mobile number'});
 }
 if(!eMail){
-return res.badRequest({err:'Invlaid email'});
+return res.badRequest({err:'Enetr a valid email'});
 }
 if(!passWord){
-return res.badRequest({err:'Invlaid password'});
+return res.badRequest({err:'Enter a valid password'});
 }
 User.create({
 firstname : firstName,
